@@ -1,0 +1,33 @@
+{
+  "chartOptions": {
+    "responsive": true,
+    "scales": {
+      "x": {
+        "grid": {
+          "display": false
+        }
+      }
+    },
+    "plugins": {
+      "tooltip": {
+        "enabled": true,
+        "position": "nearest",
+        "mode": "nearest",
+        "usePointStyle": true
+      },
+      "htmlLegend": {
+        "containerID": "legend-container"
+      },
+      "legend": {
+        "display": false
+      }
+    }
+  },
+  "pointOptions": {
+    "pointStyle": "circle",
+    "pointBackgroundColor": "#ffffff",
+    "pointRadius": 7.5,
+    "pointHoverRadius": 10,
+    "spanGaps": true
+  }
+}

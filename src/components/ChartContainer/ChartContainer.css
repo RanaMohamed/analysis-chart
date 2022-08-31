@@ -1,0 +1,24 @@
+.chart-container {
+  display: flex;
+  gap: 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.chart-canvas {
+  flex: 0.75;
+  order: 0;
+}
+
+.chart-legend {
+  flex: 0.25;
+  order: 2;
+}
+
+.chart-container::after {
+  content: "";
+  border: 1px solid #d3d3d3;
+  align-self: stretch;
+  order: 1;
+}

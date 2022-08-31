@@ -1,0 +1,10 @@
+.dropdown {
+}
+
+.dropdown__label {
+  margin-inline-end: 10px;
+}
+
+.dropdown__select {
+  width: 230px;
+}

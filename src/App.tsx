@@ -1,25 +1,48 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 
+import Main from "@pages/main/Main";
+import { setCamps } from "@redux/camps/campsActions";
+import { setCountries } from "@redux/countries/countriesActions";
+import { setSchoolsRecords } from "@redux/schools/schoolsActions";
+import { getData } from "@redux/schools/schoolsApi";
+import { schoolsLoadedSelector } from "@redux/schools/schoolsSelectors";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Details from "@pages/details/Details";
+import Loading from "@components/common/Loading/Loading";
+
 function App() {
+  const dispatch = useDispatch();
+  const isLoaded = useSelector(schoolsLoadedSelector);
+  useEffect(() => {
+    const getAppData = async () => {
+      const { countries, camps, records } = await getData();
+      dispatch(setSchoolsRecords(records));
+      dispatch(setCountries(countries));
+      dispatch(setCamps(camps));
+    };
+
+    if (!isLoaded) {
+      setTimeout(getAppData, 2000);
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="app">
+        {!isLoaded ? (
+          <Loading />
+        ) : (
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Main />} />
+              <Route path="/details" element={<Details />} />
+            </Routes>
+          </BrowserRouter>
+        )}
+      </div>
+    </>
   );
 }
 

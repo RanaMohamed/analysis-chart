@@ -1,0 +1,43 @@
+.legend-list {
+  margin: 0;
+  padding: 0;
+}
+
+.legend-item {
+  align-items: baseline;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  margin-block: 10px;
+}
+
+.legend-item-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ce1126;
+  background-clip: content-box;
+  padding: 4px;
+  border: 2px solid #00247d;
+
+  margin-inline-end: 10px;
+}
+
+.legend-item-text {
+  margin: 0;
+  padding: 0;
+  white-space: pre-line;
+}
+
+.legend-item-total {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.legend-item-lessons {
+  font-size: 20px;
+}
+
+.legend-title {
+  color: #727272;
+}
