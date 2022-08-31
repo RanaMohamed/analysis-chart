@@ -3,7 +3,7 @@ import { selectedCampSelector } from "@redux/camps/campsSelectors";
 import { selectedCountrySelector } from "@redux/countries/countriesSelectors";
 import { createSelector } from "@reduxjs/toolkit";
 import groupBy from "@utils/groupBy";
-import months from "src/constants/months";
+import months from "@constants/months";
 
 import { RootState } from "..";
 

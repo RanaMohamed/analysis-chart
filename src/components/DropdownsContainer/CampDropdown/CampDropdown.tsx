@@ -1,14 +1,16 @@
 import React from "react";
-import Dropdown from "@components/common/Dropdown/Dropdown";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+import Dropdown from "@components/common/Dropdown/Dropdown";
 import {
   campsSelector,
   selectedCampSelector,
 } from "@redux/camps/campsSelectors";
 import { setSelectedCamp } from "@redux/camps/campsActions";
-
 function CampDropdown() {
   const dispatch = useDispatch();
+
+  const { t } = useTranslation();
 
   const camps = useSelector(campsSelector);
 
@@ -20,7 +22,7 @@ function CampDropdown() {
 
   return (
     <Dropdown
-      title={"Select Camp"}
+      title={t("selectCamp")}
       data={camps}
       value={selectedCamp}
       onSelect={onCampSelect}

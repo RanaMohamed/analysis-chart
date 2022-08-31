@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
   ChartSelectedElement,
   PointDefaultOptions,
@@ -13,13 +14,14 @@ import {
 import { ChartOptions } from "chart.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import months from "src/constants/months";
+import months from "@constants/months";
 
 import config from "./chart.config.json";
 
 import "./ChartContainer.css";
 
 function ChartContainer() {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -37,7 +39,7 @@ function ChartContainer() {
     navigate(`details`);
   };
 
-  if (!legendDetails.total) return <h1>Please select country & camp</h1>;
+  if (!legendDetails.total) return <h1>{t("selectToShow")}</h1>;
 
   return (
     <div className="chart-container">

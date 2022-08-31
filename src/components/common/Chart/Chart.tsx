@@ -12,7 +12,7 @@ import {
 } from "chart.js";
 import { getElementAtEvent, Line } from "react-chartjs-2";
 
-import { colors } from "src/constants/colors";
+import { colors } from "@constants/colors";
 import "./Chart.css";
 import htmlLegendPlugin from "./htmlLegendPlugin";
 
@@ -20,6 +20,7 @@ import {
   ChartSelectedElement,
   PointDefaultOptions,
 } from "@appTypes/chartTypes";
+import { useLocalization } from "@handlers/useLocalization";
 
 ChartJS.register(
   LineElement,
@@ -51,6 +52,8 @@ function Chart({
     labels: labels,
     datasets: [],
   });
+
+  const { dir, lang, isRTL } = useLocalization();
 
   useEffect(() => {
     const chart = chartRef.current;
@@ -92,10 +95,32 @@ function Chart({
 
   return (
     <Line
+      lang={lang}
+      dir={dir}
       ref={chartRef}
       data={chartData}
       onClick={onChartClick}
-      options={chartOptions}
+      options={{
+        ...chartOptions,
+        plugins: {
+          ...chartOptions.plugins,
+          tooltip: {
+            ...chartOptions.plugins?.tooltip,
+            rtl: isRTL,
+          },
+        },
+        scales: {
+          ...chartOptions.scales,
+          x: {
+            ...chartOptions.scales?.x,
+            reverse: isRTL ? true : false,
+          },
+          y: {
+            ...chartOptions.scales?.y,
+            position: isRTL ? "right" : "left",
+          },
+        },
+      }}
       plugins={[htmlLegendPlugin]}
     />
   );

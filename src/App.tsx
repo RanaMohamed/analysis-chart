@@ -12,9 +12,16 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Details from "@pages/details/Details";
 import Loading from "@components/common/Loading/Loading";
 
+import { ConfigProvider } from "antd";
+import Header from "@components/Header/Header";
+import { useLocalization } from "./handlers/useLocalization";
+
 function App() {
   const dispatch = useDispatch();
   const isLoaded = useSelector(schoolsLoadedSelector);
+
+  const { dir } = useLocalization();
+
   useEffect(() => {
     const getAppData = async () => {
       const { countries, camps, records } = await getData();
@@ -29,20 +36,23 @@ function App() {
   }, []);
 
   return (
-    <>
-      <div className="app">
+    <ConfigProvider direction={dir}>
+      <div className="app" dir={dir}>
         {!isLoaded ? (
           <Loading />
         ) : (
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Main />} />
-              <Route path="/details" element={<Details />} />
-            </Routes>
-          </BrowserRouter>
+          <div>
+            <Header />
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Main />} />
+                <Route path="/details" element={<Details />} />
+              </Routes>
+            </BrowserRouter>
+          </div>
         )}
       </div>
-    </>
+    </ConfigProvider>
   );
 }
 

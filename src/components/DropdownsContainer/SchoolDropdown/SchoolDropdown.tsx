@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import { setSelectedSchool } from "@redux/schools/schoolsActions";
 import {
@@ -9,6 +10,7 @@ import {
 import Dropdown from "@components/common/Dropdown/Dropdown";
 
 function SchoolDropdown() {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const schools = useSelector(schoolsSelector);
@@ -19,7 +21,7 @@ function SchoolDropdown() {
   };
   return (
     <Dropdown
-      title={"Select School"}
+      title={t("selectSchool")}
       data={schools}
       value={selectedSchool}
       onSelect={onSchoolSelect}

@@ -21,7 +21,10 @@
       "@components/*": ["src/components/*"],
       "@appTypes/*": ["src/types/*"],
       "@redux/*": ["src/redux/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@constants/*": ["src/constants/*"],
+      "@handlers/*": ["src/handlers/*"],
+      "@i18n/*": ["src/i18n/*"]
     }
   },
   "include": ["src"],

@@ -1,0 +1,18 @@
+{
+  "translation": {
+    "analysisChart": "Analysis Chart",
+    "noOfLessons": "Number of lessons",
+    "selectCountry": "Select Country",
+    "selectCamp": "Select Camp",
+    "selectSchool": "Select School",
+    "selectToShow": "Please select country & camp to show lessons chart",
+    "country": "Country",
+    "camp": "Camp",
+    "month": "Month",
+    "lessons": "Lessons",
+    "back": "Back",
+    "in": "in",
+    "noSelectedData": "No selected data to show",
+    "showAll": "Show all"
+  }
+}

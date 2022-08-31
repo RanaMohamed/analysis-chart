@@ -1,0 +1,18 @@
+{
+  "translation": {
+    "analysisChart": "مخطط التحليل",
+    "noOfLessons": "عدد الدروس",
+    "selectCountry": "حدد الدولة",
+    "selectCamp": "حدد معسكر",
+    "selectSchool": "حدد المدرسة",
+    "selectToShow": "يرجى تحديد البلد والمخيم لإظهار مخطط الدروس",
+    "country": "الدولة",
+    "camp": "المعسكر",
+    "month": "شهر",
+    "lessons": "الدروس",
+    "back": "العودة",
+    "in": "فى",
+    "noSelectedData": "لا توجد بيانات محددة للعرض",
+    "showAll": "اعرض الكل"
+  }
+}

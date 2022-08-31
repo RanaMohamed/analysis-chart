@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import Dropdown from "@components/common/Dropdown/Dropdown";
 
@@ -10,6 +11,7 @@ import {
 } from "@redux/countries/countriesSelectors";
 
 function CountryDropdown() {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const countries = useSelector(countriesSelector);
   const selectedCountry = useSelector(selectedCountrySelector);
@@ -19,7 +21,7 @@ function CountryDropdown() {
 
   return (
     <Dropdown
-      title={"Select Country"}
+      title={t("selectCountry")}
       data={countries}
       value={selectedCountry}
       onSelect={onCountrySelect}
