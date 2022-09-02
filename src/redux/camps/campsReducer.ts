@@ -1,12 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+interface CampsState {
+  loaded: boolean;
+  camps: string[] | null;
+  selectedCamp: string | null;
+}
+
+const initialState: CampsState = {
+  loaded: false,
+  camps: null,
+  selectedCamp: null,
+};
+
 export const campsSlice = createSlice({
   name: "camps",
-  initialState: {
-    loaded: false,
-    camps: null,
-    selectedCamp: null,
-  },
+  initialState,
   reducers: {
     setCamps: (state, payload) => {
       state.loaded = true;

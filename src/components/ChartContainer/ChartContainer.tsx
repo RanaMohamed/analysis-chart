@@ -42,7 +42,7 @@ function ChartContainer() {
   if (!legendDetails.total) return <h1>{t("selectToShow")}</h1>;
 
   return (
-    <div className="chart-container">
+    <div className="chart-container" data-testid="chart">
       <div className="chart-canvas">
         <Chart
           chartOptions={config.chartOptions as ChartOptions<"line">}

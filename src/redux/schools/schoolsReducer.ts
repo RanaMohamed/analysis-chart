@@ -1,16 +1,29 @@
+import { SchoolRecord } from "@appTypes/schoolTypes";
 import { createSlice } from "@reduxjs/toolkit";
+
+interface SchoolsState {
+  loaded: boolean;
+  records: SchoolRecord[] | null;
+  selectedSchool: string | null;
+  detailsOptions: {
+    selectedSchool: string | null;
+    selectedMonth: string | null;
+  };
+}
+
+const initialState: SchoolsState = {
+  loaded: false,
+  records: null,
+  selectedSchool: null,
+  detailsOptions: {
+    selectedSchool: null,
+    selectedMonth: null,
+  },
+};
 
 export const schoolsSlice = createSlice({
   name: "schools",
-  initialState: {
-    loaded: false,
-    records: null,
-    selectedSchool: null,
-    detailsOptions: {
-      selectedSchool: null,
-      selectedMonth: null,
-    },
-  },
+  initialState,
   reducers: {
     setSchoolsRecords: (state, payload) => {
       state.loaded = true;

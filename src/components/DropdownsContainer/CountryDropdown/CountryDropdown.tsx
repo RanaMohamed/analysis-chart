@@ -21,6 +21,7 @@ function CountryDropdown() {
 
   return (
     <Dropdown
+      id="country"
       title={t("selectCountry")}
       data={countries}
       value={selectedCountry}

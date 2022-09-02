@@ -21,6 +21,7 @@ function SchoolDropdown() {
   };
   return (
     <Dropdown
+      id="school"
       title={t("selectSchool")}
       data={schools}
       value={selectedSchool}

@@ -22,6 +22,7 @@ function CampDropdown() {
 
   return (
     <Dropdown
+      id="camp"
       title={t("selectCamp")}
       data={camps}
       value={selectedCamp}

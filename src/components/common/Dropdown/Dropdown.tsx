@@ -7,6 +7,7 @@ import "./Dropdown.css";
 const { Option } = Select;
 
 interface IProps {
+  id: string;
   title: string;
   data: string[];
   value: string | null;
@@ -14,17 +15,27 @@ interface IProps {
   showAll?: boolean;
 }
 
-function Dropdown({ title, data, value, onSelect, showAll = false }: IProps) {
+function Dropdown({
+  id,
+  title,
+  data,
+  value,
+  onSelect,
+  showAll = false,
+}: IProps) {
   const { t } = useTranslation();
   return (
     <div className="dropdown">
-      <label className="dropdown__label">{title}</label>
+      <label className="dropdown__label" htmlFor={id}>
+        {title}
+      </label>
       <Select
         value={value}
         onChange={onSelect}
         dropdownMatchSelectWidth
         className={"dropdown__select"}
         placeholder={title}
+        id={id}
       >
         {showAll && <Option value={"ALL"}>{t("showAll")}</Option>}
         {data.map((o: string) => (
