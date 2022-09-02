@@ -1,0 +1,9 @@
+@import url(antd/dist/antd.dark.min.css);
+
+.app {
+  --bg-color: #1f1f1f;
+  --card-bg-color: #141414;
+  --border-color: #d3d3d3;
+  --primary-color: #8a5ea9;
+  --secondary-color: #727272;
+}

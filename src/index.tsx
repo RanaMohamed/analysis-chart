@@ -6,7 +6,6 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "@redux/index";
 
-import "antd/dist/antd.min.css";
 import "@i18n/i18n";
 
 const root = ReactDOM.createRoot(

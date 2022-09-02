@@ -1,7 +1,7 @@
 .chart-container {
   display: flex;
   gap: 15px;
-  background-color: #ffffff;
+  background-color: var(--card-bg-color);
   border-radius: 5px;
   padding: 20px;
 }
@@ -18,7 +18,7 @@
 
 .chart-container::after {
   content: "";
-  border: 1px solid #d3d3d3;
+  border: 1px solid var(--border-color);
   align-self: stretch;
   order: 1;
 }

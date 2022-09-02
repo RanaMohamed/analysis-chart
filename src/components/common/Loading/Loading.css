@@ -11,7 +11,7 @@ div.lds-grid {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #8a5ea9;
+  background: var(--primary-color);
   animation: lds-grid 1.2s linear infinite;
 }
 .lds-grid div:nth-child(1) {

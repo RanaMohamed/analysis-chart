@@ -39,5 +39,5 @@
 }
 
 .legend-title {
-  color: #727272;
+  color: var(--secondary-color);
 }
