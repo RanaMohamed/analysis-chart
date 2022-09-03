@@ -15,12 +15,14 @@ import Loading from "@components/common/Loading/Loading";
 import { ConfigProvider } from "antd";
 import Header from "@components/Header/Header";
 import { useLocalization } from "./handlers/useLocalization";
+import { useTheming } from "@handlers/useTheming";
 
 function App() {
   const dispatch = useDispatch();
   const isLoaded = useSelector(schoolsLoadedSelector);
 
   const { dir } = useLocalization();
+  useTheming();
 
   useEffect(() => {
     const getAppData = async () => {
