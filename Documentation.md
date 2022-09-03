@@ -9,7 +9,7 @@ Extracted the countries and camps from the given records, filtered schools based
 | Folder            | Contains                                                            |
 | ----------------- | ------------------------------------------------------------------- |
 | \_\_tests\_\_     | All test files                                                      |
-| components/common | Common components like chart and dropdown                           |
+| components/common | Common components like chart, dropdown and legendItem               |
 | components/\*     | All used components                                                 |
 | constants         | Constants like months and some colors that are used in charts       |
 | handlers          | useLocalization and useTheming hooks                                |
@@ -19,3 +19,13 @@ Extracted the countries and camps from the given records, filtered schools based
 | styles            | Common css for light and dark themes                                |
 | types             | Common interfaces                                                   |
 | utils             | Helper functions like groupBy method to group items by specific key |
+
+## Features
+
+- Loading for 2 seconds then fetch data
+- Show 3 dropdowns with countries, camps and schools
+- Show chart with schools details for selected country and camp
+- Show legend with chart data
+- Clicking on a point on chart show details for selected country, camp, school and month
+- Toggle button in header to switch language (EN/AR)
+- Toggle button in header to switch theme (Light/Dark)
