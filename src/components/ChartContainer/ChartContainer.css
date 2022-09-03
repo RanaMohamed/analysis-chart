@@ -6,12 +6,12 @@
   padding: 20px;
 }
 
-.chart-canvas {
+.chart__canvas {
   flex: 0.75;
   order: 0;
 }
 
-.chart-legend {
+.chart__legend {
   flex: 0.25;
   order: 2;
 }

@@ -43,7 +43,7 @@ function ChartContainer() {
 
   return (
     <div className="chart-container" data-testid="chart">
-      <div className="chart-canvas">
+      <div className="chart__canvas">
         <Chart
           chartOptions={config.chartOptions as ChartOptions<"line">}
           pointOptions={config.pointOptions as PointDefaultOptions}
@@ -56,7 +56,7 @@ function ChartContainer() {
       <Legend
         legendDetails={legendDetails}
         containerId={config.chartOptions.plugins.htmlLegend.containerID}
-        containerClassName={"chart-legend"}
+        containerClassName={"chart__legend"}
         showSummary={Object.values(schools).length > 1}
       />
     </div>

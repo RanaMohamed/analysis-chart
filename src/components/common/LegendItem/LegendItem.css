@@ -6,7 +6,7 @@
   margin-block: 10px;
 }
 
-.legend-item-icon {
+.legend-item__icon {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -18,17 +18,17 @@
   margin-inline-end: 10px;
 }
 
-.legend-item-text {
+.legend-item__text {
   margin: 0;
   padding: 0;
   white-space: pre-line;
 }
 
-.legend-item-total {
+.legend-item__total {
   font-size: 30px;
   font-weight: bold;
 }
 
-.legend-item-lessons {
+.legend-item__lessons {
   font-size: 20px;
 }

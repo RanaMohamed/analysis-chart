@@ -23,13 +23,13 @@ function LegendItem({
     <div className="legend-item" onClick={onClick}>
       {withPointStyle && (
         <span
-          className="legend-item-icon"
+          className="legend-item__icon"
           style={{ backgroundColor: color, borderColor: color }}
         ></span>
       )}
-      <p className="legend-item-text" style={{ color: color }}>
-        <span className="legend-item-total">{total}</span>{" "}
-        <span className="legend-item-lessons">{t("lessons")}</span>
+      <p className="legend-item__text" style={{ color: color }}>
+        <span className="legend-item__total">{total}</span>{" "}
+        <span className="legend-item__lessons">{t("lessons")}</span>
         {"\n"}
         {t("in")} {text}
       </p>

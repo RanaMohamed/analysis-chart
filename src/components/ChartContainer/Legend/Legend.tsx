@@ -19,7 +19,7 @@ function Legend({
 }: IProps) {
   return (
     <div className={`${containerClassName}`}>
-      <div className="legend-title">
+      <div className="legend__title">
         {showSummary && (
           <LegendItem
             withPointStyle={false}
