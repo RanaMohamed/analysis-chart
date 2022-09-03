@@ -39,7 +39,7 @@ function ChartContainer() {
     navigate(`details`);
   };
 
-  if (!legendDetails.total) return <h1>{t("selectToShow")}</h1>;
+  if (!legendDetails.total) return <h3>{t("selectToShow")}</h3>;
 
   return (
     <div className="chart-container" data-testid="chart">

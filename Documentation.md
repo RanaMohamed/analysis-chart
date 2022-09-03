@@ -29,3 +29,5 @@ Extracted the countries and camps from the given records, filtered schools based
 - Clicking on a point on chart show details for selected country, camp, school and month
 - Toggle button in header to switch language (EN/AR)
 - Toggle button in header to switch theme (Light/Dark)
+- Handle unit testing for components
+- Hanlde e2e testing for main page using cypress

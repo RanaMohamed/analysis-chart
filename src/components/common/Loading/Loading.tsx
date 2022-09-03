@@ -4,7 +4,7 @@ import "./Loading.css";
 
 function Loading() {
   return (
-    <div className="lds-grid">
+    <div className="loading">
       <div></div>
       <div></div>
       <div></div>
