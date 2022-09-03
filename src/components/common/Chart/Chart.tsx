@@ -21,6 +21,8 @@ import {
   PointDefaultOptions,
 } from "@appTypes/chartTypes";
 import { useLocalization } from "@handlers/useLocalization";
+import { useSelector } from "react-redux";
+import { themeSelector } from "@redux/layout/layoutSelectors";
 
 ChartJS.register(
   LineElement,
@@ -54,6 +56,7 @@ function Chart({
   });
 
   const { dir, lang, isRTL } = useLocalization();
+  const theme = useSelector(themeSelector);
 
   useEffect(() => {
     const chart = chartRef.current;
@@ -93,6 +96,9 @@ function Chart({
     }
   };
 
+  const color = theme === "light" ? "#000000" : "#ffffff";
+  const inverseColor = theme === "light" ? "#ffffff" : "#000000";
+
   return (
     <Line
       lang={lang}
@@ -107,6 +113,9 @@ function Chart({
           tooltip: {
             ...chartOptions.plugins?.tooltip,
             rtl: isRTL,
+            backgroundColor: color + "cc",
+            titleColor: inverseColor,
+            bodyColor: inverseColor,
           },
         },
         scales: {
@@ -114,10 +123,27 @@ function Chart({
           x: {
             ...chartOptions.scales?.x,
             reverse: isRTL ? true : false,
+            grid: {
+              ...chartOptions.scales?.x?.grid,
+              borderColor: color + "20",
+            },
+            ticks: {
+              ...chartOptions.scales?.x?.ticks,
+              color: color,
+            },
           },
           y: {
             ...chartOptions.scales?.y,
             position: isRTL ? "right" : "left",
+            grid: {
+              ...chartOptions.scales?.y?.grid,
+              borderColor: color + "40",
+              color: color + "20",
+            },
+            ticks: {
+              ...chartOptions.scales?.y?.ticks,
+              color: color,
+            },
           },
         },
       }}

@@ -66,6 +66,12 @@ const htmlLegendPlugin = {
     }
     root.render(legendItems);
   },
+  afterDestroy(chart: Chart<"line">, args: IArgs, options: HTMLPluginOptions) {
+    if (!options.containerID) return;
+    if (roots[options.containerID]) {
+      delete roots[options.containerID];
+    }
+  },
 };
 
 export default htmlLegendPlugin;

@@ -6,12 +6,14 @@ import {
 import campsReducer from "@redux/camps/campsReducer";
 import countriesReducer from "@redux/countries/countriesReducer";
 import schoolsReducer from "@redux/schools/schoolsReducer";
+import layoutReducer from "./layout/layoutReducer";
 
 const store = configureStore({
   reducer: {
     schools: schoolsReducer,
     countries: countriesReducer,
     camps: campsReducer,
+    layout: layoutReducer,
   },
 });
 
@@ -19,6 +21,7 @@ const rootReducer = combineReducers({
   schools: schoolsReducer,
   countries: countriesReducer,
   camps: campsReducer,
+  layout: layoutReducer,
 });
 
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {

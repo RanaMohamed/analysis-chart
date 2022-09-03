@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import light from "!css-loader!src/style/light.css";
 import dark from "!css-loader!src/style/dark.css";
+import { useDispatch, useSelector } from "react-redux";
+import { themeSelector } from "@redux/layout/layoutSelectors";
+import { setTheme } from "@redux/layout/layoutActions";
 
 const themes: Record<string, string> = {
   light,
@@ -9,10 +12,11 @@ const themes: Record<string, string> = {
 };
 
 export const useTheming = () => {
-  const [theme, setTheme] = useState("light");
+  const theme = useSelector(themeSelector);
+  const dispatch = useDispatch();
 
   const changeTheme = (newTheme: string) => {
-    setTheme(newTheme);
+    dispatch(setTheme(newTheme));
   };
 
   useEffect(() => {

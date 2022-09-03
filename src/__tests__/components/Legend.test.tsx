@@ -15,7 +15,7 @@ describe("Render chart container", () => {
       />
     );
     expect(screen.getByText("190")).toBeInTheDocument();
-    expect(screen.getByText("lessons")).toBeInTheDocument();
+    expect(screen.getByText("Lessons")).toBeInTheDocument();
     expect(screen.getByText("in Kakuma")).toBeInTheDocument();
   });
 });
