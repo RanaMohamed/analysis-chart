@@ -1,7 +1,7 @@
 import {} from "cypress";
 
-describe("empty spec", () => {
-  it("passes", () => {
+describe("Main page", () => {
+  it("show loading, seelct data and render chart", () => {
     cy.visit("http://localhost:3000");
     cy.get("div.loading");
     cy.get("h1").should("be.visible").should("contain.text", "Analysis Chart");
