@@ -2,6 +2,7 @@ import React from "react";
 import { LegendSummary } from "@appTypes/schoolTypes";
 
 import "./Legend.css";
+import LegendItem from "@components/common/LegendItem/LegendItem";
 
 interface IProps {
   legendDetails: LegendSummary;
@@ -17,17 +18,21 @@ function Legend({
   showSummary,
 }: IProps) {
   return (
-    <div className={`${containerClassName}`} id={containerId}>
-      <p className="legend-item-text legend-title">
+    <div className={`${containerClassName}`}>
+      <div className="legend-title">
         {showSummary && (
-          <>
-            <span className="legend-item-total">{legendDetails.total}</span>
-            <span className="legend-item-lessons"> lessons</span>
-            <br />
-            in {legendDetails.selectedCamp}
-          </>
+          <LegendItem
+            withPointStyle={false}
+            color={"inherit"}
+            total={legendDetails.total}
+            text={legendDetails.selectedCamp}
+            onClick={() => {
+              return;
+            }}
+          ></LegendItem>
         )}
-      </p>
+      </div>
+      <div id={containerId}></div>
     </div>
   );
 }
