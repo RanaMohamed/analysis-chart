@@ -6,6 +6,7 @@ import { renderWithProviders } from "@utils/testUtils";
 import ChartContainer from "@components/ChartContainer/ChartContainer";
 
 const preloadedState = {
+  layout: { theme: "light" },
   countries: { loaded: true, countries: [], selectedCountry: null },
   camps: {
     loaded: true,

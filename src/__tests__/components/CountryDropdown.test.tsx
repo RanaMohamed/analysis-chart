@@ -7,6 +7,7 @@ import { act } from "react-dom/test-utils";
 import userEvent from "@testing-library/user-event";
 
 const preloadedState = {
+  layout: { theme: "light" },
   countries: { loaded: false, countries: [], selectedCountry: null },
   camps: {
     loaded: true,
@@ -72,7 +73,7 @@ describe("Render country dropdown", () => {
       container.parentElement?.getElementsByClassName("ant-select-item");
     expect(selectItems).toHaveLength(2);
 
-    const element = screen.getAllByText("Egypt").at(1);
+    const element = screen.getAllByText("Egypt")[1];
 
     if (element) {
       act(() => {

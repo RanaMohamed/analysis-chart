@@ -7,6 +7,7 @@ import userEvent from "@testing-library/user-event";
 import SchoolDropdown from "@components/DropdownsContainer/SchoolDropdown/SchoolDropdown";
 
 const preloadedState = {
+  layout: { theme: "light" },
   countries: { loaded: false, countries: [], selectedCountry: null },
   camps: {
     loaded: true,
@@ -91,7 +92,7 @@ describe("Render school dropdown", () => {
       container.parentElement?.getElementsByClassName("ant-select-item");
     expect(selectItems).toHaveLength(2);
 
-    const element = screen.getAllByText("Rapaura School").at(1);
+    const element = screen.getAllByText("Rapaura School")[1];
 
     if (element) {
       act(() => {

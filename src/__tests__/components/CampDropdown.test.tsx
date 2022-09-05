@@ -7,6 +7,7 @@ import userEvent from "@testing-library/user-event";
 import CampDropdown from "@components/DropdownsContainer/CampDropdown/CampDropdown";
 
 const preloadedState = {
+  layout: { theme: "light" },
   countries: { loaded: false, countries: [], selectedCountry: null },
   camps: {
     loaded: true,
@@ -72,7 +73,7 @@ describe("Render camp dropdown", () => {
       container.parentElement?.getElementsByClassName("ant-select-item");
     expect(selectItems).toHaveLength(2);
 
-    const element = screen.getAllByText("Kakuma").at(1);
+    const element = screen.getAllByText("Kakuma")[1];
 
     if (element) {
       act(() => {

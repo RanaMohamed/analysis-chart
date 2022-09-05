@@ -65,7 +65,7 @@ describe("Render dropdown", () => {
       container.parentElement?.getElementsByClassName("ant-select-item");
     expect(selectItems).toHaveLength(2);
 
-    const element = screen.getAllByText("Item 1").at(1);
+    const element = screen.getAllByText("Item 1")[1];
 
     if (element) {
       act(() => {
@@ -137,7 +137,7 @@ describe("Render dropdown", () => {
       container.parentElement?.getElementsByClassName("ant-select-item");
     expect(selectItems).toHaveLength(4);
 
-    const element = screen.getAllByText("Item 1").at(1);
+    const element = screen.getAllByText("Item 1")[1];
 
     if (element) {
       act(() => {

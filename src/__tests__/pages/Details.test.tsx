@@ -6,6 +6,7 @@ import { renderWithProviders } from "@utils/testUtils";
 import Details from "@pages/details/Details";
 
 const preloadedState = {
+  layout: { theme: "light" },
   countries: { loaded: true, countries: [], selectedCountry: "Egypt" },
   camps: {
     loaded: true,
