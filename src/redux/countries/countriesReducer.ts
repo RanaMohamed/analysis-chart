@@ -19,6 +19,9 @@ export const countriesSlice = createSlice({
     setCountries: (state, payload) => {
       state.loaded = true;
       state.countries = payload.payload;
+      if (payload.payload.length) {
+        state.selectedCountry = payload.payload[0];
+      }
     },
     setSelectedCountry: (state, payload) => {
       state.selectedCountry = payload.payload;

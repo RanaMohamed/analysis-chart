@@ -8,17 +8,11 @@ describe("Main page", () => {
     cy.get("h2")
       .should("be.visible")
       .should("contain.text", "Number of lessons");
-    cy.get("h3")
-      .should("be.visible")
-      .should(
-        "contain.text",
-        "Please select country & camp to show lessons chart"
-      );
 
-    cy.get("#country").click();
+    cy.get("#country").click({ force: true });
     cy.get(".ant-select-item-option").contains("Egypt").click();
 
-    cy.get("#camp").click();
+    cy.get("#camp").click({ force: true });
     cy.get(".ant-select-item-option").contains("Kakuma").click();
 
     cy.get(".chart__canvas").should("be.visible");

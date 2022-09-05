@@ -19,6 +19,9 @@ export const campsSlice = createSlice({
     setCamps: (state, payload) => {
       state.loaded = true;
       state.camps = payload.payload;
+      if (payload.payload.length) {
+        state.selectedCamp = payload.payload[0];
+      }
     },
     setSelectedCamp: (state, payload) => {
       state.selectedCamp = payload.payload;
